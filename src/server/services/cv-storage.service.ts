@@ -24,3 +24,17 @@ export const uploadCv = async (
 
   return { filePath, fileName: file.name };
 };
+
+export const getCvSignedUrl = async (
+  filePath: string
+): Promise<string> => {
+  const sb = createServiceRoleClient();
+
+  const { data, error } = await sb.storage
+    .from(BUCKET)
+    .createSignedUrl(filePath, 60);
+
+  if (error) throw new Error(`Failed to generate CV URL: ${error.message}`);
+
+  return data.signedUrl;
+};

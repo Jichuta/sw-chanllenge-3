@@ -3,9 +3,11 @@ import type { CandidateFiltersInput } from "@/src/lib/validation/candidate.schem
 import { toCandidate } from "@/src/server/mappers/candidate.mapper";
 import {
   insertCandidate,
-  listCandidates
+  listCandidates,
+  findCandidateById,
+  updateCandidateStatus
 } from "@/src/server/repositories/candidate.repository";
-import { uploadCv } from "@/src/server/services/cv-storage.service";
+import { uploadCv, getCvSignedUrl } from "@/src/server/services/cv-storage.service";
 import { randomUUID } from "node:crypto";
 
 export const createCandidate = async (
@@ -53,4 +55,30 @@ export const getCandidates = async (
 ): Promise<Candidate[]> => {
   const rows = await listCandidates(filters);
   return rows.map(toCandidate);
+};
+
+export const getCandidateById = async (
+  id: string
+): Promise<Candidate | null> => {
+  const row = await findCandidateById(id);
+  return row ? toCandidate(row) : null;
+};
+
+export const updateStatus = async (
+  id: string,
+  status: string,
+  adminId?: string
+): Promise<Candidate> => {
+  const row = await updateCandidateStatus(id, status, adminId);
+  return toCandidate(row);
+};
+
+export const getCandidateCvUrl = async (id: string): Promise<string> => {
+  const candidate = await findCandidateById(id);
+
+  if (!candidate) {
+    throw new Error("Candidate not found");
+  }
+
+  return getCvSignedUrl(candidate.cv_file_path);
 };

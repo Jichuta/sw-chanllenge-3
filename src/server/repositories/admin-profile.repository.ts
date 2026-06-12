@@ -1,7 +1,23 @@
 import type { AdminProfileRow } from "@/src/types/database";
+import { createServiceRoleClient } from "@/src/lib/supabase/service-role";
+
+const TABLE = "admin_profiles";
 
 export const findAdminProfileByAuthUserId = async (
-  _authUserId: string
+  authUserId: string
 ): Promise<AdminProfileRow | null> => {
-  throw new Error("Admin profile repository will be implemented with Supabase in Sprint 3.");
+  const sb = createServiceRoleClient();
+
+  const { data, error } = await sb
+    .from(TABLE)
+    .select()
+    .eq("auth_user_id", authUserId)
+    .single();
+
+  if (error) {
+    if (error.code === "PGRST116") return null;
+    throw new Error(`Failed to find admin profile: ${error.message}`);
+  }
+
+  return data as AdminProfileRow;
 };

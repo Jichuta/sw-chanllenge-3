@@ -8,6 +8,8 @@ The uploaded CV file is stored on disk or object storage, while the database sto
 
 This model works with SQLite for a simple local setup and can be moved to PostgreSQL or Supabase with minimal changes. When Supabase Auth is introduced, password storage should live in Supabase `auth.users`, while `admin_profiles.auth_user_id` links the authenticated user to app-level HR data.
 
+For local development without Supabase, the app uses an in-memory `LocalUser` store with plain-text passwords (never use this pattern in production).
+
 ## Entities
 
 ### Candidate
@@ -160,6 +162,24 @@ CREATE INDEX idx_admin_profiles_email ON admin_profiles (email);
   "updatedAt": "2026-06-12T16:00:00.000Z"
 }
 ```
+
+## LocalUser
+
+Represents a local development user for mock authentication when Supabase Auth is not configured.
+
+| Field | Type | Required | Notes |
+| --- | --- | --- | --- |
+| id | string | yes | Maps to `admin_profiles.auth_user_id`. |
+| email | string | yes | Sign-in email. Must match an `admin_profiles` record. |
+| password | string | yes | Plain-text (local dev only — never use in production). |
+| name | string | yes | Display name. |
+| role | string | yes | Must be `Admin`. |
+
+### Seed Data
+
+| Email | Password | Name | Role |
+| --- | --- | --- | --- |
+| hr.admin@example.com | ChangeMe123! | HR Admin | Admin |
 
 ## Validation Rules
 

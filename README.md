@@ -6,34 +6,56 @@ This repository is being built for SW Challenge 3. The selected stack is a full-
 
 ## Current Sprint
 
-Sprint 2 implements the candidate application flow:
+Sprint 3 implements the HR admin workflow:
 
-- Responsive candidate form with React Hook Form + Zod validation.
-- `POST /api/candidates` with server-side validation and file checks.
-- CV PDF upload to Supabase Storage (max 5 MB).
-- Candidate data persisted in Supabase Postgres via the API.
-- Toast notifications for submission success and error states.
-- Supabase client setup (browser, server, service-role).
-- Database migration and seed data.
-- Unit tests for validation schemas.
+- Supabase Auth admin sign-in at `/admin/login`.
+- Protected admin layout with server-side session check.
+- Admin candidate list with filters by country, city, English level.
+- English level traffic-light badges (green/yellow/red).
+- Admin API routes (list, detail, status update, CV signed URL).
+- Candidate profile page with status update control.
+- Secure CV opening via signed URLs from Supabase Storage.
+- Sign-out functionality in the admin header.
+- Loading and error states for admin pages.
+- Playwright e2e smoke tests for public pages.
 
-Sprint 1 (foundation) and Sprint 2 (application flow) are complete. Sprint 3 will add admin auth and candidate review.
+All three sprints are complete. The project now covers the full candidate-to-admin workflow.
 
 ## Prerequisites
 
 - Node.js 20 or newer.
 - pnpm 10 or newer.
-- A Supabase project (required for Sprint 2 features).
 
-## Install
+## Quick Start (Local Mock Mode)
+
+Run the app without any external services:
 
 ```bash
 pnpm install
+pnpm dev
 ```
 
-## Environment
+The app starts in **mock mode** using an in-memory data store. No Supabase project is needed.
 
-Create a local env file:
+**Admin login credentials** (mock mode):
+
+| Email | Password |
+| --- | --- |
+| hr.admin@example.com | ChangeMe123! |
+
+Open:
+
+```text
+http://localhost:3000               # Public homepage
+http://localhost:3000/apply          # Candidate form
+http://localhost:3000/admin/login    # Admin sign-in
+http://localhost:3000/admin/candidates  # Candidate list
+http://localhost:3000/api/health     # Health check
+```
+
+## Production Setup (with Supabase)
+
+### Environment
 
 ```bash
 cp .env.example .env.local
@@ -50,37 +72,17 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 PLAYWRIGHT_BASE_URL=http://localhost:3000
 ```
 
-Sprint 2 requires valid Supabase credentials. Run the migration in `supabase/migrations/0001_initial_schema.sql` and the storage setup in `supabase/storage.sql` on your Supabase project before using the form.
+When valid Supabase credentials are detected, the app automatically switches from mock mode to the real Supabase backend.
 
-## Run Locally
+### Setup Steps
 
-```bash
-pnpm dev
-```
-
-Open:
-
-```text
-http://localhost:3000
-```
-
-Apply page:
-
-```text
-http://localhost:3000/apply
-```
-
-Health route:
-
-```text
-http://localhost:3000/api/health
-```
-
-Admin placeholder:
-
-```text
-http://localhost:3000/admin
-```
+1. Run `supabase/migrations/0001_initial_schema.sql` on your Supabase project.
+2. Run `supabase/storage.sql` to create the private CV bucket.
+3. Create an admin auth user in Supabase Auth dashboard:
+   - Email: `hr.admin@example.com`
+   - Password: `ChangeMe123!`
+4. Update `supabase/seed.sql` with the auth user ID and run it.
+5. (Optional) Upload sample CV files for seed candidates to the `candidate-cvs` bucket.
 
 ## Scripts
 
@@ -128,4 +130,5 @@ docs/                   Requirements, architecture, prompts, and implementation 
 - [Stack decision](docs/stack/architecture-stack.md)
 - [Sprint 1 plan](docs/implementation-1/sprint-1-plan.md)
 - [Sprint 2 plan](docs/implementation-1/sprint-2-plan.md)
+- [Sprint 3 plan](docs/implementation-1/sprint-3-plan.md)
 

@@ -1,3 +1,8 @@
+-- Create the admin auth user manually in the Supabase dashboard:
+--   Email: hr.admin@example.com
+--   Password: ChangeMe123!
+-- Then update the auth_user_id below with the actual user ID from auth.users.
+
 INSERT INTO admin_profiles (id, auth_user_id, email, name, role, is_active)
 VALUES (
   'a0000000-0000-0000-0000-000000000001',

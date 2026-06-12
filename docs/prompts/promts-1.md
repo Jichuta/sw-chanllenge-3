@@ -28,19 +28,110 @@ really great the folders, so lets start with the sprint 1, then start the implem
 as we said we will be starting first with the setup
 ```
 
-#### next
+#### next sprint 2
 ```bash
 ok no lets start the planning for the sprint 2 in the same folder /docs/implementation-1 based on the @docs/stack/architecture-stack.md @docs/data-model.md @docs/user-stories.md @docs/vision.md we are trying to complete the @docs/requirement/challenge3.md and make the deliverable working as spected, so as you can see we divided the implementataion process, lets plan the sprint 2 in the folder i told you, follow the best practices, use the skill that we installed as guidance, always add validation in the frontend for form, inputs, use the exisiting patter, always handle errors, show notification when a form was submited correctly, or for any post action in toastr message
 ```
 
-#### next
+#### next sprint 3
 ```bash
+ok no lets start the planning for the sprint 3 in the same folder /docs/implementation-1 based on the @docs/stack/architecture-stack.md @docs/data-model.md @docs/user-stories.md @docs/vision.md we are trying to complete the @docs/requirement/challenge3.md and make the deliverable working as spected, so as you can see we divided the implementataion process, lets plan the sprint 2 in the folder i told you, follow the best practices, use the skill that we installed as guidance, always add validation in the frontend for form, inputs, use the exisiting patter, always handle errors, show notification when a form was submited correctly, or for any post action in toastr message, do your best and lets try to accomplish what we plan, then start implementing, you are the best 10x pro seniour dev
 ```
 
 #### next
 ```bash
+there are errors could you fix it
 ```
 
 #### next
 ```bash
+ok, but this page has errors http://localhost:3000/admin/candidates Runtime ErrorServer
+Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+
+src\lib\supabase\server.ts (7:28) @ createClient
+
+   5 |   const cookieStore = await cookies();
+   6 |
+>  7 |   return createServerClient(
+     |                            ^
+   8 |     process.env.NEXT_PUBLIC_SUPABASE_URL!,
+   9 |     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+  10 |     {
+
+Call Stack 7
+Show 5 ignore-listed frame(s)
+createClient
+src\lib\supabase\server.ts (7:28)
+DashboardLayout
+app\admin\(dashboard)\layout.tsx (19:14) so review it an fix it, be really carefull
+```
+
+#### next
+```bash
+ok i am still seeing this error, one thing that you should keep in mind is that in prod we will be using supabase but in local we should be making a tuik, like a default behavior, i did something like that in past an it work, later i integrated with the supabase keys, so could you do something like that and work on this error Runtime ErrorServer
+Missing Supabase environment variables. Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in your .env.local file. Visit https://supabase.com/dashboard/project/_/settings/api to find your project's API settings.
+
+src\lib\supabase\server.ts (9:11) @ createClient
+
+   7 |
+   8 |   if (!supabaseUrl || !supabaseAnonKey) {
+>  9 |     throw new Error(
+     |           ^
+  10 |       "Missing Supabase environment variables. " +
+  11 |       "Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in your .env.local file. " +
+  12 |       "Visit https://supabase.com/dashboard/project/_/settings/api to find your project's API settings."
+
+Call Stack 7
+Show 5 ignore-listed frame(s)
+createClient
+src\lib\supabase\server.ts (9:11)
+DashboardLayout
+app\admin\(dashboard)\layout.tsx (21:32) Runtime ErrorServer
+Missing Supabase environment variables. Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in your .env.local file. Visit https://supabase.com/dashboard/project/_/settings/api to find your project's API settings.
+
+src\lib\supabase\server.ts (9:11) @ createClient
+
+   7 |
+   8 |   if (!supabaseUrl || !supabaseAnonKey) {
+>  9 |     throw new Error(
+     |           ^
+  10 |       "Missing Supabase environment variables. " +
+  11 |       "Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in your .env.local file. " +
+  12 |       "Visit https://supabase.com/dashboard/project/_/settings/api to find your project's API settings."
+
+Call Stack 7
+Show 5 ignore-listed frame(s)
+createClient
+src\lib\supabase\server.ts (9:11)
+DashboardLayout
+app\admin\(dashboard)\layout.tsx (21:32) 
+```
+
+#### next
+```bash
+in the home page when i click in the HR area, it directly opens this page http://localhost:3000/admin/candidates and we have a list of some candites, but it should be verifying if there is a token, if not ask me lo login, and if need to we can create a user table for this, which will later also be a really great thing to do, then update the @docs/data-model.md if needed, also the @README.md file adding some user and password example to login, and also update the @sprint-3-plan.md if needed, do it go ahead, do you best
+```
+
+#### next
+```bash
+the Sign out, is not working properly, review that that and make it work correctly
+```
+
+#### next
+```bash
+
+```
+
+#### next
+```bash
+
+```
+
+#### next
+```bash
+
 ```
