@@ -30,6 +30,7 @@ as we said we will be starting first with the setup
 
 #### next
 ```bash
+ok no lets start the planning for the sprint 2 in the same folder /docs/implementation-1 based on the @docs/stack/architecture-stack.md @docs/data-model.md @docs/user-stories.md @docs/vision.md we are trying to complete the @docs/requirement/challenge3.md and make the deliverable working as spected, so as you can see we divided the implementataion process, lets plan the sprint 2 in the folder i told you, follow the best practices, use the skill that we installed as guidance, always add validation in the frontend for form, inputs, use the exisiting patter, always handle errors, show notification when a form was submited correctly, or for any post action in toastr message
 ```
 
 #### next

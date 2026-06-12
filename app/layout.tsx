@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -12,7 +13,10 @@ type RootLayoutProps = Readonly<{
 
 const RootLayout = ({ children }: RootLayoutProps) => (
   <html lang="en">
-    <body>{children}</body>
+    <body>
+      {children}
+      <Toaster />
+    </body>
   </html>
 );
 

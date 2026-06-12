@@ -6,29 +6,28 @@ This repository is being built for SW Challenge 3. The selected stack is a full-
 
 ## Current Sprint
 
-Sprint 1 focuses on project foundation:
+Sprint 2 implements the candidate application flow:
 
-- Next.js App Router structure.
-- TypeScript strict mode.
-- Tailwind CSS baseline.
-- API route foundation.
-- Domain constants and validation schemas.
-- Vitest and Playwright setup.
-- Supabase folder placeholders.
-- Documentation for local development.
+- Responsive candidate form with React Hook Form + Zod validation.
+- `POST /api/candidates` with server-side validation and file checks.
+- CV PDF upload to Supabase Storage (max 5 MB).
+- Candidate data persisted in Supabase Postgres via the API.
+- Toast notifications for submission success and error states.
+- Supabase client setup (browser, server, service-role).
+- Database migration and seed data.
+- Unit tests for validation schemas.
 
-Feature implementation starts in later sprints.
+Sprint 1 (foundation) and Sprint 2 (application flow) are complete. Sprint 3 will add admin auth and candidate review.
 
 ## Prerequisites
 
 - Node.js 20 or newer.
 - pnpm 10 or newer.
-- A Supabase project for later integration.
+- A Supabase project (required for Sprint 2 features).
 
 ## Install
 
 ```bash
-corepack enable
 pnpm install
 ```
 
@@ -51,7 +50,7 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 PLAYWRIGHT_BASE_URL=http://localhost:3000
 ```
 
-Sprint 1 does not require live Supabase values to render the placeholder app. Sprint 2 and Sprint 3 will require Supabase credentials.
+Sprint 2 requires valid Supabase credentials. Run the migration in `supabase/migrations/0001_initial_schema.sql` and the storage setup in `supabase/storage.sql` on your Supabase project before using the form.
 
 ## Run Locally
 
@@ -63,6 +62,12 @@ Open:
 
 ```text
 http://localhost:3000
+```
+
+Apply page:
+
+```text
+http://localhost:3000/apply
 ```
 
 Health route:
@@ -80,14 +85,14 @@ http://localhost:3000/admin
 ## Scripts
 
 ```bash
-pnpm dev
-pnpm build
-pnpm start
-pnpm lint
-pnpm typecheck
-pnpm test
-pnpm test:watch
-pnpm test:e2e
+pnpm dev         # Start dev server
+pnpm build       # Production build
+pnpm start       # Start production server
+pnpm lint        # Run ESLint
+pnpm typecheck   # Run TypeScript check
+pnpm test        # Run unit tests
+pnpm test:watch  # Run tests in watch mode
+pnpm test:e2e    # Run Playwright e2e tests
 ```
 
 ## Project Structure
@@ -96,9 +101,10 @@ pnpm test:e2e
 app/                    Next.js pages, layouts, and API route handlers
 components/             Reusable UI, admin, and form components
 src/lib/                Shared constants, validation, errors, and utilities
-src/server/             Server-only auth, repositories, and services
+src/lib/supabase/       Supabase client modules (browser, server, service-role)
+src/server/             Server-only auth, repositories, services, and mappers
 src/types/              Application and database types
-supabase/               Future migrations, seed data, and storage setup
+supabase/               Migrations, seed data, and storage setup
 tests/unit/             Vitest unit tests
 tests/e2e/              Playwright e2e tests
 docs/                   Requirements, architecture, prompts, and implementation plans
@@ -110,8 +116,8 @@ docs/                   Requirements, architecture, prompts, and implementation 
 - UI code must not write directly to the database.
 - Persistence code belongs in `src/server/repositories/*`.
 - Business workflow code belongs in `src/server/services/*`.
-- Shared validation belongs in `src/lib/validation/*`.
-- CV files will be stored in Supabase Storage, not in the deployed app filesystem.
+- CV files are stored in Supabase Storage, not in the deployed app filesystem.
+- Client validation is for UX only; server-side validation is enforced on all API inputs.
 
 ## Documentation
 
@@ -121,4 +127,5 @@ docs/                   Requirements, architecture, prompts, and implementation 
 - [Data model](docs/data-model.md)
 - [Stack decision](docs/stack/architecture-stack.md)
 - [Sprint 1 plan](docs/implementation-1/sprint-1-plan.md)
+- [Sprint 2 plan](docs/implementation-1/sprint-2-plan.md)
 
