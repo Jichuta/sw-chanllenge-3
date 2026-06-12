@@ -7,8 +7,32 @@ ee el documento docs\requirement\challenge3.md y creemos inicialmente primeros d
 #### next
 ```bash
 in no goal you added "User authentication." but we might need a simple auth for admins later we will integrate supabase, for initial approach we will need some kind of auth with some seed
-  data for all data models that needs it, please include that into the user stories, and modify what is needed, think of this app as something that will be used by HR team in a company, so
-  it should work, do your best
+data for all data models that needs it, please include that into the user stories, and modify what is needed, think of this app as something that willbe used by HR team in a company, so
+it should work, do your best
+```
+
+#### next
+```bash
+now based on the description, and all the files that yoo provide, tell me which stack should i use, we might to use nextjs, because then we will be able to deploy for
+free, i read that we might need like a separated api, right? or it is not necessary according to the documents and the chanllengedocs\requirement\challenge3.md ? if it
+does say anything we might need to decide, but tell me which should be our stack, and how our proyect should be structured, create a file .md inside docs/stack folder
+with this, this should be really detailed to accomplish the goal of the challenges, you are a 10x pro maz seniour dev
+```
+
+#### next
+```bash
+```
+
+#### next
+```bash
+```
+
+#### next
+```bash
+```
+
+#### next
+```bash
 ```
 
 #### next
