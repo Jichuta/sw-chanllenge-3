@@ -55,30 +55,30 @@ Implement the HR admin workflow with Supabase Auth sign-in, protected admin page
 | Task | Status |
 | --- | --- |
 | Create Sprint 3 planning document. | Done |
-| Add auth session helper (`src/server/auth/session.ts`). | Todo |
-| Implement `requireAdmin()` with real Supabase session + admin profile check. | Todo |
-| Implement admin profile repository (find by auth user id). | Todo |
-| Add `getSignedUrl` to CV storage service. | Todo |
-| Add `getCandidateById`, `updateCandidateStatus`, `getCvSignedUrl` to candidate service. | Todo |
-| Add login validation schema. | Todo |
-| Create `GET /api/admin/candidates` route with filters. | Todo |
-| Create `GET /api/admin/candidates/[id]` route. | Todo |
-| Create `PATCH /api/admin/candidates/[id]/status` route. | Todo |
-| Create `GET /api/admin/candidates/[id]/cv` route (signed URL). | Todo |
-| Create admin login page (`/admin/login`). | Todo |
-| Create protected admin layout with session check + sign-out. | Todo |
-| Build `english-level-badge` component. | Todo |
-| Build `candidate-filters` component. | Todo |
-| Build `candidates-table` component. | Todo |
-| Build `candidate-status-select` component. | Todo |
-| Create admin candidates list page with table + filters. | Todo |
-| Create admin candidate profile page with status update. | Todo |
-| Update root admin page to redirect to `/admin/candidates`. | Todo |
-| Add `loading.tsx` and `error.tsx` for admin routes. | Todo |
-| Update seed data with Supabase auth user reference. | Todo |
-| Add Playwright e2e smoke test. | Todo |
-| Update README with Sprint 3 documentation. | Todo |
-| Run verification commands (typecheck, lint, test, build). | Todo |
+| Add auth session helper (`src/server/auth/session.ts`). | Done |
+| Implement `requireAdmin()` with real Supabase session + admin profile check. | Done |
+| Implement admin profile repository (find by auth user id). | Done |
+| Add `getSignedUrl` to CV storage service. | Done |
+| Add `getCandidateById`, `updateCandidateStatus`, `getCvSignedUrl` to candidate service. | Done |
+| Add login validation schema. | Done |
+| Create `GET /api/admin/candidates` route with filters. | Done |
+| Create `GET /api/admin/candidates/[id]` route. | Done |
+| Create `PATCH /api/admin/candidates/[id]/status` route. | Done |
+| Create `GET /api/admin/candidates/[id]/cv` route (signed URL). | Done |
+| Create admin login page (`/admin/login`). | Done |
+| Create protected admin layout with session check + sign-out. | Done |
+| Build `english-level-badge` component. | Done |
+| Build `candidate-filters` component. | Done |
+| Build `candidates-table` component. | Done |
+| Build `candidate-status-select` component. | Done |
+| Create admin candidates list page with table + filters. | Done |
+| Create admin candidate profile page with status update. | Done |
+| Update root admin page to redirect to `/admin/candidates`. | Done |
+| Add `loading.tsx` and `error.tsx` for admin routes. | Done |
+| Update seed data with Supabase auth user reference. | Done |
+| Add Playwright e2e smoke test. | Done |
+| Update README with Sprint 3 documentation. | Done |
+| Run verification commands (typecheck, lint, test, build). | Done |
 | Add local mock auth system (in-memory users + cookie session). | Done |
 | Refactor mock client into browser/server/data factories. | Done |
 | Add `local_users` seed data with credentials. | Done |
