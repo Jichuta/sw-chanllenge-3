@@ -21,6 +21,11 @@ with this, this should be really detailed to accomplish the goal of the challeng
 
 #### next
 ```bash
+ok, now that we planned and selected our stack, lets divide the work in sprint, and update the docs\user-stories.md with we are going to start implementing, create a
+file .md inside /docs/implementation-1 with the planning of the sprint 1, do it with detail, following the best practices and the skills that we justinstalled, do not
+forget to add the .gitignore file, use typescript, then also setup the test, for next trust entirely on the skill, use error handling, link, arrowfunctions, organize
+really great the folders, so lets start with the sprint 1, then start the implementation, also add the readme file with the basics and command to startrunning the app,
+as we said we will be starting first with the setup
 ```
 
 #### next

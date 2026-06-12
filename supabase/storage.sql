@@ -1,0 +1,2 @@
+-- Sprint 1 placeholder.
+-- Sprint 2 will define the private candidate-cvs storage bucket and policies.

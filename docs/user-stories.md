@@ -1,5 +1,53 @@
 # User Stories
 
+## Implementation Priority
+
+The project will be delivered in small implementation sprints so the repository remains runnable after each step.
+
+### Sprint 1: Project Foundation
+
+Goal: create the Next.js TypeScript foundation, documentation, folder structure, validation conventions, test setup, and local run instructions.
+
+Included stories:
+
+- TS-005: Set up the application foundation.
+- TS-006: Define project structure and engineering standards.
+- TS-007: Set up automated tests.
+- TS-008: Document local development workflow.
+
+Not included yet:
+
+- Candidate submission persistence.
+- Supabase Auth integration.
+- Admin candidate table implementation.
+- PDF upload to Supabase Storage.
+
+### Sprint 2: Candidate Application Flow
+
+Goal: implement the public candidate form, candidate validation, candidate API endpoint, and CV file checks.
+
+Included stories:
+
+- US-001: Submit Candidate Registration.
+- US-002: Use the Form on Mobile.
+- TS-001: Persist Data Through an API.
+- TS-003: Validate Candidate Input.
+
+### Sprint 3: Admin Auth and Candidate Review
+
+Goal: implement HR admin sign-in, protected admin pages, candidate list, filters, profile view, CV opening, and status updates.
+
+Included stories:
+
+- US-003: Sign In as HR Admin.
+- US-004: View Candidate List.
+- US-005: Filter Candidates.
+- US-006: See English Level Status.
+- US-007: Open Candidate CV.
+- US-008: Update Candidate Status.
+- TS-002: Seed Initial Data.
+- TS-004: Prepare for Supabase Auth.
+
 ## Candidate Stories
 
 ### US-001: Submit Candidate Registration
@@ -141,3 +189,51 @@ Acceptance criteria:
 - The data model can reference an external auth user id.
 - Admin-only API routes check the authenticated admin session.
 - Local development can use a simple seeded auth strategy until Supabase is integrated.
+
+### TS-005: Set Up Application Foundation
+
+As a developer, I want the Next.js TypeScript project initialized with consistent tooling so that feature work can start from a reliable base.
+
+Acceptance criteria:
+
+- The repository includes a Next.js App Router structure.
+- TypeScript is configured with strict mode.
+- ESLint and formatting conventions are available through npm scripts.
+- Tailwind CSS global styling is configured.
+- The app has a basic public route and admin placeholder route.
+
+### TS-006: Define Project Structure and Engineering Standards
+
+As a developer, I want folders organized by responsibility so that API, persistence, UI, and domain logic stay separated.
+
+Acceptance criteria:
+
+- App routes live under `app/`.
+- Reusable UI components live under `components/`.
+- Server-only business logic lives under `src/server/`.
+- Shared constants, validation, and helpers live under `src/lib/`.
+- Types live under `src/types/`.
+- Supabase migration and seed files live under `supabase/`.
+
+### TS-007: Set Up Automated Tests
+
+As a developer, I want basic test tooling available from Sprint 1 so that validation and business rules can be verified as features are added.
+
+Acceptance criteria:
+
+- Vitest is configured for unit tests.
+- A test script exists in `package.json`.
+- At least one unit test covers an existing business helper.
+- The testing folder structure is ready for unit and e2e tests.
+
+### TS-008: Document Local Development Workflow
+
+As a developer, I want a README with setup and run commands so that a peer can start the project locally.
+
+Acceptance criteria:
+
+- README explains the project purpose.
+- README lists prerequisites.
+- README documents install, dev, lint, test, and build commands.
+- README documents required environment variables.
+- `.env.example` is included.

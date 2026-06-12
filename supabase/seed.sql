@@ -1,0 +1,2 @@
+-- Sprint 1 placeholder.
+-- Sprint 2/3 will add local seed data for demo candidates and HR admin profile.
