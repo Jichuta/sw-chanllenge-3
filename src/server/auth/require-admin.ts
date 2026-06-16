@@ -1,6 +1,7 @@
 import { apiError } from "@/src/lib/errors";
 import { getCurrentUser } from "@/src/server/auth/session";
-import { findAdminProfileByAuthUserId } from "@/src/server/repositories/admin-profile.repository";
+import { isLocalMode } from "@/src/lib/db/config";
+import { findAdminProfileByAuthUserId, findAdminProfileById } from "@/src/server/repositories/admin-profile.repository";
 import type { AdminProfileRow } from "@/src/types/database";
 
 export const requireAdmin = async (): Promise<
@@ -20,7 +21,9 @@ export const requireAdmin = async (): Promise<
     };
   }
 
-  const admin = await findAdminProfileByAuthUserId(user.id);
+  const admin = isLocalMode()
+    ? await findAdminProfileById(user.id)
+    : await findAdminProfileByAuthUserId(user.id);
 
   if (!admin || !admin.is_active) {
     return {

@@ -16,17 +16,34 @@ const AdminLoginPage = () => {
     setIsLoading(true);
 
     try {
-      const sb = createClient();
-      const { error } = await sb.auth.signInWithPassword({ email, password });
+      const response = await fetch("/api/admin/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
 
-      if (error) {
-        toast.error(error.message);
+      if (response.ok) {
+        toast.success("Signed in successfully");
+        router.push("/admin/candidates");
+        router.refresh();
         return;
       }
 
-      toast.success("Signed in successfully");
-      router.push("/admin/candidates");
-      router.refresh();
+      if (response.status === 400) {
+        const sb = createClient();
+        const { error } = await sb.auth.signInWithPassword({ email, password });
+        if (error) {
+          toast.error(error.message);
+          return;
+        }
+        toast.success("Signed in successfully");
+        router.push("/admin/candidates");
+        router.refresh();
+        return;
+      }
+
+      const result = await response.json();
+      toast.error(result?.error?.message ?? "Invalid email or password");
     } catch {
       toast.error("An unexpected error occurred");
     } finally {

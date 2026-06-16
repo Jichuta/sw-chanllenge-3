@@ -146,10 +146,12 @@ but for english level for example, in he admin table i am seeing Strong, below t
 
 #### next
 ```bash
+now, in order to test in docker environment, it would be better to have the DB in postgresSQL and create the migration and the necesary seed data, could you add a docker componse file and the docker file for the nextjs application, so the data is persisted and we can start test end to end, do the necesary changes needed to add postgress sql, with its libraries to do the migration
 ```
 
 #### next
 ```bash
+we have 2 scripts @supabase/migrations/0001_initial_schema.sql and @01-schema.sql inside /scripts/db/init and also a similar seed? why ? do we need both?
 ```
 
 #### next
