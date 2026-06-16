@@ -6,6 +6,9 @@ import { createServiceRoleClient } from "@/src/lib/supabase/service-role";
 
 const TABLE = "candidates";
 
+const toISO = (v: unknown): string =>
+  v instanceof Date ? v.toISOString() : String(v ?? "");
+
 const rowToCandidate = (row: Record<string, unknown>): CandidateRow => ({
   id: row.id as string,
   name: row.name as string,
@@ -21,9 +24,9 @@ const rowToCandidate = (row: Record<string, unknown>): CandidateRow => ({
   cv_mime_type: "application/pdf",
   cv_file_size: row.cv_file_size as number,
   status_updated_by: (row.status_updated_by as string) ?? null,
-  status_updated_at: (row.status_updated_at as string) ?? null,
-  created_at: row.created_at as string,
-  updated_at: row.updated_at as string,
+  status_updated_at: row.status_updated_at ? toISO(row.status_updated_at) : null,
+  created_at: toISO(row.created_at),
+  updated_at: toISO(row.updated_at),
 });
 
 export const insertCandidate = async (

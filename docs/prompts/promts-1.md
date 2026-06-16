@@ -156,6 +156,7 @@ we have 2 scripts @supabase/migrations/0001_initial_schema.sql and @01-schema.sq
 
 #### next
 ```bash
+take a look again, verify if all changes make sense and if it is going  to work, please very it really carefully
 ```
 
 #### next

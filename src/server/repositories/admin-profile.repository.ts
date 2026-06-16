@@ -5,6 +5,9 @@ import { createServiceRoleClient } from "@/src/lib/supabase/service-role";
 
 const TABLE = "admin_profiles";
 
+const toISO = (v: unknown): string =>
+  v instanceof Date ? v.toISOString() : String(v ?? "");
+
 const rowToAdmin = (row: Record<string, unknown>): AdminProfileRow => ({
   id: row.id as string,
   auth_user_id: (row.auth_user_id as string) ?? null,
@@ -12,8 +15,8 @@ const rowToAdmin = (row: Record<string, unknown>): AdminProfileRow => ({
   name: row.name as string,
   role: row.role as "Admin",
   is_active: Boolean(row.is_active),
-  created_at: row.created_at as string,
-  updated_at: row.updated_at as string,
+  created_at: toISO(row.created_at),
+  updated_at: toISO(row.updated_at),
 });
 
 export const findAdminProfileByAuthUserId = async (

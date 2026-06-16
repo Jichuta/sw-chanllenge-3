@@ -41,11 +41,6 @@ export const getCvSignedUrl = async (
   filePath: string
 ): Promise<string> => {
   if (isLocalMode()) {
-    const storagePath = getCvStoragePath();
-    const absolutePath = path.join(storagePath, filePath);
-    if (!fs.existsSync(absolutePath)) {
-      throw new Error("CV file not found");
-    }
     return `/api/cv/${filePath}`;
   }
 

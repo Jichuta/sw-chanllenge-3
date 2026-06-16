@@ -42,8 +42,8 @@ const AdminLoginPage = () => {
         return;
       }
 
-      const result = await response.json();
-      toast.error(result?.error?.message ?? "Invalid email or password");
+      const result = await response.json().catch(() => null);
+      toast.error(result?.error?.message ?? "Login failed. Please try again.");
     } catch {
       toast.error("An unexpected error occurred");
     } finally {
