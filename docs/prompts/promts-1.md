@@ -133,5 +133,33 @@ ok all the recommendation of the missing things, basically all you give me in th
 
 #### next
 ```bash
+from this document @docs/requirement/challenge3.md it is missing to complete this Admin panel shows the candidate list with filters by location and English level.
+Traffic-light rule highlights B2+ in green, B1 in yellow, lower levels in red.
+The form is responsive (mobile and desktop).
+The PDF CV can be opened from the admin table. , could you please implemente as it is requesting, te filtering in the admin table by location and English level, English levels should A1, A2, B1, B2, C1 and C2, in there file it specifies what colors it should have, it also talks about that the web app should be responsive
+```
 
+#### next
+```bash
+but for english level for example, in he admin table i am seeing Strong, below targe, and not the exact level of english, could check that
+```
+
+#### next
+```bash
+```
+
+#### next
+```bash
+```
+
+#### next
+```bash
+```
+
+#### next
+```bash
+```
+
+#### next
+```bash
 ```
