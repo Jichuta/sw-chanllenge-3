@@ -121,14 +121,14 @@ in the home page when i click in the HR area, it directly opens this page http:/
 the Sign out, is not working properly, review that that and make it work correctly
 ```
 
-#### next
+#### next sprint 4
 ```bash
-
+ok no lets start the planning for the sprint 4 in the same folder /docs/implementation-1 based on the @docs/stack/architecture-stack.md @docs/data-model.md @docs/user-stories.md @docs/vision.md we are trying to complete the @docs/requirement/challenge3.md and make the deliverable working as spected, so as you can see we divided the implementataion process, lets plan the sprint 2 in the folder i told you, follow the best practices, use the skill that we installed as guidance, always add validation in the frontend for form, inputs, use the exisiting patter, always handle errors, show notification when a form was submited correctly, or for any post action in toastr message, do your best and lets try to accomplish what we plan, then start implementing, you are the best 10x pro seniour dev, do it really carefully
 ```
 
 #### next
 ```bash
-
+ok all the recommendation of the missing things, basically all you give me in the last response, could you added inside a sprint 6 file in /docs/implementation-1 folder, go ahead
 ```
 
 #### next

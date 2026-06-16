@@ -121,6 +121,24 @@ docs/                   Requirements, architecture, prompts, and implementation 
 - CV files are stored in Supabase Storage, not in the deployed app filesystem.
 - Client validation is for UX only; server-side validation is enforced on all API inputs.
 
+## Deliverable Checklist
+
+| Requirement | Status |
+| --- | --- |
+| Public registration form (name, email, phone, age, country, city, English level, PDF CV) | ✅ |
+| Data persisted through an API | ✅ |
+| Admin panel with candidate list and filters (location, English level) | ✅ |
+| Traffic-light rule (B2+ green, B1 yellow, A1-A2 red) | ✅ |
+| Responsive form (mobile + desktop) | ✅ |
+| PDF CV can be opened from admin table | ✅ |
+| Candidate status can be changed (Accepted, Rejected, In Review) | ✅ |
+| Spec documents exist before code | ✅ |
+| `/prompts` folder with prompt logs per sprint | ✅ |
+| Planning files track progress (todo / doing / done) | ✅ |
+| Clear separation of concerns (API, persistence, UI) | ✅ |
+| Input validation, error handling, CV file-type/size checks | ✅ |
+| README with local run instructions | ✅ |
+
 ## Documentation
 
 - [Challenge requirement](docs/requirement/challenge3.md)
@@ -131,4 +149,6 @@ docs/                   Requirements, architecture, prompts, and implementation 
 - [Sprint 1 plan](docs/implementation-1/sprint-1-plan.md)
 - [Sprint 2 plan](docs/implementation-1/sprint-2-plan.md)
 - [Sprint 3 plan](docs/implementation-1/sprint-3-plan.md)
+- [Sprint 4 plan](docs/implementation-1/sprint-4-plan.md)
+- [Prompt logs](prompts/)
 
